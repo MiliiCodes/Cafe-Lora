@@ -310,3 +310,9 @@ nav a:hover {
     width: 33.333%;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .nav-btn {
+    display: none;
+  }
+}
