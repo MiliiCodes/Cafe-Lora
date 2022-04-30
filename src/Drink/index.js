@@ -22,5 +22,24 @@ for (let i = 0; i < layers.length; i += 1) {
 coffeeList.innerHTML += Layer(layers[i]);
 }
 
+let isOrdered = `${ordered}`
+
+const orderButton = element.querySelector('.order-btn');
+const cup = element.querySelector(".drink__cup")
+
+orderButton.addEventListener("click", () => {
+  if (!isOrdered) {
+    orderButton.textContent = "Objednáno"
+    cup.classList.add("drink__cup--selected")
+    isOrdered = true
+  }
+  else {
+    orderButton.textContent = "Zrušeno"
+    cup.classList.remove("drink__cup--selected")
+    isOrdered = false
+  }
+})
+
 return element
+
 }
