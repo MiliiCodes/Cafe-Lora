@@ -13,26 +13,28 @@ document.querySelector("nav").classList.toggle("nav-closed")
   })
 })
 
-const orderButton = document.querySelector(".order-btn")
-const cup = document.querySelector(".drink__cup")
-
-let ordered = false
-
-// orderButton.addEventListener("click", () => {
-//   if (ordered === false) {
-//     orderButton.textContent = "Zrušit"
-//     cup.classList.add("drink__cup--selected")
-//     ordered = true
-//   }
-
-//   else {
-//     orderButton.textContent = "Objednat"
-//     cup.classList.remove("drink__cup--selected")
-//     ordered = false
-//   }
-//   })
-
-  const coffeeRomano = {
+const drinks = [
+  {
+    id: 'cappuccino',
+    name: 'Cappuccino',
+    ordered: false,
+    layers: [
+      {
+        color: '#feeeca',
+        label: 'mléčná pěna',
+      },
+      {
+        color: '#fed7b0',
+        label: 'teplé mléko',
+      },
+      {
+        color: '#613916',
+        label: 'espresso',
+      },
+    ],
+    image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/cappuccino.png',
+  },
+  {
     id: 'romano',
     name: 'Romano',
     ordered: false,
@@ -47,29 +49,13 @@ let ordered = false
       },
     ],
     image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/romano.png',
-  };
+  },
+];
 
 const addCoffee  = document.querySelector(".drinks-list")
-addCoffee.appendChild(Drink(coffeeRomano))
+for (let i = 0; i < drinks.length; i += 1) {
+  addCoffee.appendChild(Drink(drinks[i]))
+}
 
-  // const coffees = [
-  //   {
-  //     color: '#feeeca',
-  //     label: 'mléčná pěna',
-  //   },
-  //   {
-  //     color: '#fed7b0',
-  //     label: 'teplé mléko',
-  //   },
-  //   {
-  //     color: '#613916',
-  //     label: 'espresso',
-  //   },
-  // ]
-
-  // const coffeeList = document.querySelector('.drink__info');
-  // for (let i = 0; i < coffees.length; i += 1) {
-  //   coffeeList.innerHTML += Layer(coffees[i]);
-  // }
 
 
